@@ -8,127 +8,239 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #090910;
+  background: #07070d;
   color: white;
-  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.hidden { display: none; }
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 5%, rgba(255, 118, 203, 0.25), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(136, 92, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 50% 95%, rgba(255, 210, 232, 0.14), transparent 35%),
+    #07070d;
+  z-index: -3;
+}
 
-#start-screen {
+#hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: rgba(255, 181, 230, 0.55);
+  animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  to { transform: translateY(-110vh) scale(1.8); opacity: 0; }
+}
+
+.hidden { display: none !important; }
+
+.screen {
   min-height: 100vh;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background:
-    radial-gradient(circle at top, #3d1b4f, transparent 40%),
-    #090910;
 }
 
-.terminal {
-  width: 100%;
-  max-width: 430px;
-  background: rgba(0,0,0,0.78);
-  border: 1px solid rgba(255, 145, 216, 0.8);
-  border-radius: 24px;
-  padding: 26px;
-  box-shadow: 0 0 40px rgba(255, 145, 216, 0.22);
+.screen.active { display: flex; }
+
+.intro-card,
+.terminal,
+.hero,
+.memory-main,
+.timeline,
+.note,
+.facts,
+.photo-section,
+.letter-lock,
+.final {
+  width: min(92vw, 680px);
+  margin: 24px auto;
+  padding: 32px 24px;
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(255,255,255,0.075);
+  backdrop-filter: blur(18px);
+  border-radius: 32px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.38);
 }
 
-#typing-text {
-  min-height: 230px;
-  white-space: pre-line;
-  font-family: monospace;
-  font-size: 16px;
-  color: #ffd6f3;
-}
-
-button {
-  width: 100%;
-  border: none;
-  padding: 15px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ff8ad8, #8e6cff);
-  color: white;
-  font-size: 17px;
-  font-weight: 700;
-  margin-top: 18px;
-  cursor: pointer;
-}
-
-section {
-  max-width: 680px;
-  margin: auto;
-  padding: 36px 22px;
-}
-
-.hero {
-  min-height: 100vh;
+.intro-card {
+  min-height: 620px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background:
-    radial-gradient(circle at top right, rgba(255,138,216,0.22), transparent 35%),
-    radial-gradient(circle at bottom left, rgba(142,108,255,0.22), transparent 35%);
 }
 
-.tag {
+.date {
   color: #ffb8e8;
-  font-size: 15px;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  margin-bottom: 14px;
 }
 
 h1 {
   font-size: 42px;
-  line-height: 1.15;
-  margin: 12px 0 22px;
+  line-height: 1.12;
+  margin-bottom: 18px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 34px;
+  line-height: 1.15;
   margin-bottom: 18px;
-  color: #ffd6f3;
 }
 
 h3 {
   color: #ffb8e8;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 p {
   font-size: 18px;
+  line-height: 1.7;
+  color: #f5eef8;
   margin-bottom: 14px;
-  color: #f4eef7;
 }
 
-.card,
-.code-card,
-.memory,
-.final {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.13);
-  border-radius: 24px;
-  margin: 22px auto;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+button {
+  width: 100%;
+  border: none;
+  padding: 16px 18px;
+  border-radius: 999px;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #ff8ad8, #8e6cff);
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(255,138,216,0.28);
 }
 
-.code-card pre {
-  overflow-x: auto;
-  background: #050508;
-  color: #a8ffcf;
-  padding: 18px;
-  border-radius: 18px;
-  font-size: 15px;
+.terminal {
+  background: rgba(0,0,0,0.78);
 }
 
-.gallery img {
+#bootText {
+  min-height: 260px;
+  white-space: pre-line;
+  font-family: monospace;
+  color: #c7ffd9;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+main {
+  padding: 20px 0 45px;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pill {
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+  color: #ffb8e8;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.memory-main img {
   width: 100%;
   display: block;
+  border-radius: 26px;
+  margin: 18px 0;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.45);
+}
+
+.chapter {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.chapter:last-child { border-bottom: none; }
+
+.chapter span {
+  color: #ffb8e8;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.highlight {
+  color: #ffb8e8;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.fact {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  padding: 18px;
+  margin: 14px 0;
+  font-size: 17px;
+  color: #f8eef8;
+}
+
+.memory-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.memory-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 26px;
+  padding: 16px;
+}
+
+.memory-card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+.memory-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #f7eef7;
+}
+
+.letter {
+  margin-top: 22px;
+  padding: 24px;
+  background: rgba(0,0,0,0.25);
   border-radius: 24px;
-  margin: 16px 0;
-  box-shadow: 0 16px 36px rgba(0,0,0,0.38);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.sign {
+  color: #ffb8e8;
+  font-size: 23px;
+  font-weight: 900;
 }
 
 .final {
@@ -136,13 +248,17 @@ p {
   background: linear-gradient(135deg, rgba(255,138,216,0.18), rgba(142,108,255,0.18));
 }
 
+.final h2 { font-size: 38px; }
+
 .final h3 {
-  font-size: 24px;
-  margin-top: 22px;
+  color: #ffb8e8;
+  font-size: 25px;
+  margin-top: 20px;
 }
 
-@media (max-width: 420px) {
-  h1 { font-size: 34px; }
-  h2 { font-size: 25px; }
+@media (max-width: 460px) {
+  .intro-card { min-height: 560px; }
+  h1 { font-size: 35px; }
+  h2 { font-size: 29px; }
   p { font-size: 17px; }
 }
