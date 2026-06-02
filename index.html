@@ -12,42 +12,62 @@
   <div id="hearts"></div>
 
   <section id="start" class="screen active">
-    <div class="intro-card">
+    <div class="intro-card lock-card">
 
-      <p class="date">11 August 2024</p>
-
-      <h1>Some connections return quietly.</h1>
+      <p class="date">Memory Lock</p>
+      <h1>Before this opens...</h1>
 
       <p>
-        The first call after 9 years.
+        Enter the date of the call that happened after 9 years.
       </p>
 
+      <p class="hint-text">
+        Hint: one call quietly restarted a connection.
+      </p>
+
+      <div class="pin-display" id="pinDisplay">
+        • • • • • •
+      </div>
+
+      <p id="passwordError" class="error-text"></p>
+
+      <div class="keypad">
+        <button class="key">1</button>
+        <button class="key">2</button>
+        <button class="key">3</button>
+
+        <button class="key">4</button>
+        <button class="key">5</button>
+        <button class="key">6</button>
+
+        <button class="key">7</button>
+        <button class="key">8</button>
+        <button class="key">9</button>
+
+        <button class="key action" id="clearBtn">Clear</button>
+        <button class="key">0</button>
+        <button class="key action" id="deleteBtn">⌫</button>
+      </div>
+
       <button id="startBtn">
-        Tap to continue ✨
+        Unlock memory ✨
       </button>
 
     </div>
   </section>
 
   <section id="boot" class="screen">
-
     <div class="terminal">
       <p id="bootText"></p>
     </div>
-
   </section>
 
   <main id="content" class="hidden">
 
     <section class="hero">
+      <p class="pill">Brisbane → India</p>
 
-      <p class="pill">
-        Brisbane → India
-      </p>
-
-      <h2>
-        Happy Birthday, Mansi 🎂
-      </h2>
+      <h2>Happy Birthday, Mansi 🎂</h2>
 
       <p>
         I could have sent a normal birthday message,
@@ -60,107 +80,65 @@
       </p>
 
       <button id="musicBtn">
-        Play something beautiful 🎵
+        Turn on the atmosphere ✨
       </button>
 
-      <audio id="music" src="assets/dhun.m4a"></audio>
-
+      <audio id="music" src="assets/saiyaara-bgm.m4a" loop></audio>
     </section>
 
     <section class="memory-main">
+      <p class="date">11/08/2024</p>
 
-      <p class="date">
-        11/08/2024
-      </p>
+      <h2>The call after 9 years</h2>
 
-      <h2>
-        The call after 9 years
-      </h2>
-
-      <img
-        src="assets/call-after-9-years.png"
-        alt="Call after 9 years"
-      >
+      <img src="assets/call-after-9-years.png" alt="Call after 9 years" />
 
       <p>
         Funny how some people return to your life
         as if the years in between were only a pause.
       </p>
-
     </section>
 
     <section class="timeline">
-
-      <h2>
-        Timeline of Reconnection
-      </h2>
+      <h2>Timeline of Reconnection</h2>
 
       <div class="chapter">
-
         <span>2015</span>
-
-        <h3>
-          Different schools. Different lives.
-        </h3>
-
+        <h3>Different schools. Different lives.</h3>
         <p>
           Life moved forward, schools changed,
           and childhood slowly became memories.
         </p>
-
       </div>
 
       <div class="chapter">
-
         <span>2024</span>
-
-        <h3>
-          Life connected us again
-        </h3>
-
+        <h3>Life connected us again</h3>
         <p>
-          After years, one random conversation
-          somehow made everything feel familiar again.
+          After years, one random conversation somehow made everything feel familiar again.
         </p>
-
       </div>
 
       <div class="chapter">
-
         <span>11 August 2024</span>
-
-        <h3>
-          The first call after 9 years
-        </h3>
-
+        <h3>The first call after 9 years</h3>
         <p>
           Some moments quietly become important forever.
           That call was one of them.
         </p>
-
       </div>
 
       <div class="chapter">
-
         <span>24 June</span>
-
-        <h3>
-          Your birthday
-        </h3>
-
+        <h3>Your birthday</h3>
         <p>
           Important enough to build an entire digital memory for.
         </p>
-
       </div>
-
     </section>
 
     <section class="note">
-
-      <h2>
-        Little Things I Never Say Properly
-      </h2>
+      <h2>Little Things I Never Say Properly</h2>
 
       <p>
         You became my comfort person so naturally
@@ -180,130 +158,73 @@
       <p>
         For me, you are one of those people.
       </p>
-
     </section>
 
     <section class="facts">
+      <h2>Little Things That Feel Very “Mansi” 🤍</h2>
 
-      <h2>
-        Little Things That Feel Very “Mansi” 🤍
-      </h2>
-
-      <div class="fact">
-        Can never say no to desserts 🍰
-      </div>
-
-      <div class="fact">
-        Mysore masala dosa = instant happiness 😌
-      </div>
-
-      <div class="fact">
-        Loves travelling and collecting little memories from places ✈️
-      </div>
-
-      <div class="fact">
-        Somehow makes conversations feel comforting without trying.
-      </div>
-
-      <div class="fact">
-        One of those rare people whose presence feels peaceful.
-      </div>
-
+      <div class="fact">Can never say no to desserts 🍰</div>
+      <div class="fact">Mysore masala dosa = instant happiness 😌</div>
+      <div class="fact">Loves travelling and collecting little memories from places ✈️</div>
+      <div class="fact">Somehow makes conversations feel comforting without trying.</div>
+      <div class="fact">One of those rare people whose presence feels peaceful.</div>
     </section>
 
     <section class="photo-section">
-
-      <h2>
-        Pieces of Childhood 🤍
-      </h2>
+      <h2>Pieces of Childhood 🤍</h2>
 
       <p>
-        Before life became busy,
-        complicated,
-        and fast…
-        there was just school,
-        small memories,
-        and simpler days.
+        Before life became busy, complicated, and fast…
+        there was just school, small memories, and simpler days.
       </p>
 
       <div class="memory-grid">
-
         <div class="memory-card">
-
-          <img src="assets/memory-1.jpg" alt="Memory 1">
-
-          <p>
-            Somewhere in these classrooms,
-            our story quietly existed.
-          </p>
-
+          <img src="assets/memory-1.jpg" alt="Memory 1" />
+          <p>Somewhere in these classrooms, our story quietly existed.</p>
         </div>
 
         <div class="memory-card">
-
-          <img src="assets/memory-2.jpg" alt="Memory 2">
-
+          <img src="assets/memory-2.jpg" alt="Memory 2" />
           <p>
             Funny how we never realise at that age
             which people will remain important years later.
           </p>
-
         </div>
 
         <div class="memory-card">
-
-          <img src="assets/memory-3.jpg" alt="Memory 3">
-
+          <img src="assets/memory-3.jpg" alt="Memory 3" />
           <p>
-            Back when life was homework,
-            lunch breaks,
+            Back when life was homework, lunch breaks,
             and waiting for the final bell.
           </p>
-
         </div>
 
         <div class="memory-card">
-
-          <img src="assets/memory-4.jpg" alt="Memory 4">
-
+          <img src="assets/memory-4.jpg" alt="Memory 4" />
           <p>
-            Different years.
-            Different classrooms.
+            Different years. Different classrooms.
             Same connection somehow surviving time.
           </p>
-
         </div>
 
         <div class="memory-card">
-
-          <img src="assets/memory-5.jpg" alt="Memory 5">
-
-          <p>
-            Maybe some memories never really leave us.
-          </p>
-
+          <img src="assets/memory-5.jpg" alt="Memory 5" />
+          <p>Maybe some memories never really leave us.</p>
         </div>
-
       </div>
-
     </section>
 
     <section class="letter-lock">
+      <h2>Hidden Letter</h2>
 
-      <h2>
-        Hidden Letter
-      </h2>
-
-      <p>
-        One last message is locked inside.
-      </p>
+      <p>One last message is locked inside.</p>
 
       <button id="letterBtn">
         Open Letter 💌
       </button>
 
       <div id="letter" class="hidden letter">
-
         <p>Dear Mansi,</p>
 
         <p>
@@ -319,10 +240,11 @@
         <p>
           I still find it beautiful that after so many years,
           life somehow brought us back into each other’s world.
+        </p>
+
+        <p>
           But what matters more is what happened after that —
-          the conversations,
-          the comfort,
-          the random laughs,
+          the conversations, the comfort, the random laughs,
           and the way you became important without even trying.
         </p>
 
@@ -334,10 +256,8 @@
 
         <p>
           May this year give you peace in your heart,
-          confidence in yourself,
-          success in your dreams,
-          good health,
-          and many reasons to smile without overthinking.
+          confidence in yourself, success in your dreams,
+          good health, and many reasons to smile without overthinking.
         </p>
 
         <p>
@@ -345,36 +265,30 @@
           You matter more than you probably realise.
         </p>
 
-        <p class="sign">
-          — Ayush
+        <p class="secret-line">
+          Strange how one person can become unintentionally important
+          without either of you noticing when it happened.
         </p>
 
+        <p class="sign">— Ayush</p>
       </div>
-
     </section>
 
     <section class="final">
+      <p class="date">Birthday Memory Complete</p>
 
-      <p class="date">
-        Birthday Memory Complete
-      </p>
-
-      <h2>
-        Happy Birthday, Mansi 🤍
-      </h2>
+      <h2>Happy Birthday, Mansi 🤍</h2>
 
       <p>
         Last year was about remembering where we came from.
       </p>
 
       <p>
-        This year is about appreciating
-        what you have become in my life now.
+        This year is about appreciating what you have become in my life now.
       </p>
 
       <p>
-        Not just a childhood friend.
-        Not just someone I reconnected with.
+        Not just a childhood friend. Not just someone I reconnected with.
         But someone whose presence genuinely makes my days lighter.
       </p>
 
@@ -382,15 +296,11 @@
         I am really grateful life brought you back again.
       </p>
 
-      <h3>
-        — Ayush
-      </h3>
-
+      <h3>— Ayush</h3>
     </section>
 
   </main>
 
   <script src="script.js"></script>
-
 </body>
 </html>
