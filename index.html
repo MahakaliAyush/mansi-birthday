@@ -12,47 +12,35 @@
   <div id="hearts"></div>
 
   <section id="start" class="screen active">
-    <div class="intro-card lock-card">
-
+    <div class="card lock-card">
       <p class="date">Memory Lock</p>
       <h1>Before this opens...</h1>
 
-      <p>
-        Enter the date of the call that happened after 9 years.
-      </p>
+      <p>Enter the date of the call that happened after 9 years.</p>
 
       <p class="hint-text">
         Hint: one call quietly restarted a connection.
       </p>
 
-      <div class="pin-display" id="pinDisplay">
-        • • • • • •
-      </div>
-
+      <div class="pin-display" id="pinDisplay">• • • • • •</div>
       <p id="passwordError" class="error-text"></p>
 
       <div class="keypad">
         <button class="key">1</button>
         <button class="key">2</button>
         <button class="key">3</button>
-
         <button class="key">4</button>
         <button class="key">5</button>
         <button class="key">6</button>
-
         <button class="key">7</button>
         <button class="key">8</button>
         <button class="key">9</button>
-
         <button class="key action" id="clearBtn">Clear</button>
         <button class="key">0</button>
         <button class="key action" id="deleteBtn">⌫</button>
       </div>
 
-      <button id="startBtn">
-        Unlock memory ✨
-      </button>
-
+      <button id="startBtn">Unlock memory ✨</button>
     </div>
   </section>
 
@@ -64,240 +52,291 @@
 
   <main id="content" class="hidden">
 
-    <section class="hero">
-      <p class="pill">Brisbane → India</p>
-
-      <h2>Happy Birthday, Mansi 🎂</h2>
-
-      <p>
-        I could have sent a normal birthday message,
-        but you are not a normal person in my life.
-      </p>
-
-      <p>
-        So I made this little digital memory for you —
-        something simple, warm, and straight from my heart.
-      </p>
-
-      <button id="musicBtn">
-        Turn on the atmosphere ✨
-      </button>
-
+    <div class="top-bar">
+      <button id="musicBtn">Turn on the atmosphere ✨</button>
       <audio id="music" src="assets/saiyaara-bgm.m4a" loop></audio>
-    </section>
+    </div>
 
-    <section class="memory-main">
-      <p class="date">11/08/2024</p>
+    <section id="slides">
 
-      <h2>The call after 9 years</h2>
+      <article class="slide active">
+        <div class="card">
+          <p class="pill">Brisbane → India</p>
+          <h2>Happy Birthday, Mansi 🎂</h2>
 
-      <img src="assets/call-after-9-years.png" alt="Call after 9 years" />
-
-      <p>
-        Funny how some people return to your life
-        as if the years in between were only a pause.
-      </p>
-    </section>
-
-    <section class="timeline">
-      <h2>Timeline of Reconnection</h2>
-
-      <div class="chapter">
-        <span>2015</span>
-        <h3>Different schools. Different lives.</h3>
-        <p>
-          Life moved forward, schools changed,
-          and childhood slowly became memories.
-        </p>
-      </div>
-
-      <div class="chapter">
-        <span>2024</span>
-        <h3>Life connected us again</h3>
-        <p>
-          After years, one random conversation somehow made everything feel familiar again.
-        </p>
-      </div>
-
-      <div class="chapter">
-        <span>11 August 2024</span>
-        <h3>The first call after 9 years</h3>
-        <p>
-          Some moments quietly become important forever.
-          That call was one of them.
-        </p>
-      </div>
-
-      <div class="chapter">
-        <span>24 June</span>
-        <h3>Your birthday</h3>
-        <p>
-          Important enough to build an entire digital memory for.
-        </p>
-      </div>
-    </section>
-
-    <section class="note">
-      <h2>Little Things I Never Say Properly</h2>
-
-      <p>
-        You became my comfort person so naturally
-        that I never even noticed when it happened.
-      </p>
-
-      <p>
-        Some conversations stay in your head longer than others.
-        Ours did.
-      </p>
-
-      <p class="highlight">
-        There are people you talk to,
-        and then there are people who make your day feel lighter.
-      </p>
-
-      <p>
-        For me, you are one of those people.
-      </p>
-    </section>
-
-    <section class="facts">
-      <h2>Little Things That Feel Very “Mansi” 🤍</h2>
-
-      <div class="fact">Can never say no to desserts 🍰</div>
-      <div class="fact">Mysore masala dosa = instant happiness 😌</div>
-      <div class="fact">Loves travelling and collecting little memories from places ✈️</div>
-      <div class="fact">Somehow makes conversations feel comforting without trying.</div>
-      <div class="fact">One of those rare people whose presence feels peaceful.</div>
-    </section>
-
-    <section class="photo-section">
-      <h2>Pieces of Childhood 🤍</h2>
-
-      <p>
-        Before life became busy, complicated, and fast…
-        there was just school, small memories, and simpler days.
-      </p>
-
-      <div class="memory-grid">
-        <div class="memory-card">
-          <img src="assets/memory-1.jpg" alt="Memory 1" />
-          <p>Somewhere in these classrooms, our story quietly existed.</p>
-        </div>
-
-        <div class="memory-card">
-          <img src="assets/memory-2.jpg" alt="Memory 2" />
           <p>
-            Funny how we never realise at that age
-            which people will remain important years later.
+            I could have sent a normal birthday message,
+            but you are not a normal person in my life.
+          </p>
+
+          <p>
+            So I made this little digital memory for you —
+            not because I had to, but because you deserve something thoughtful.
           </p>
         </div>
+      </article>
 
-        <div class="memory-card">
-          <img src="assets/memory-3.jpg" alt="Memory 3" />
+      <article class="slide">
+        <div class="card">
+          <p class="date">11/08/2024</p>
+          <h2>The call after 9 years</h2>
+
+          <img class="main-img" src="assets/call-after-9-years.png" alt="Call after 9 years" loading="lazy" />
+
           <p>
-            Back when life was homework, lunch breaks,
-            and waiting for the final bell.
+            Funny how some people return to your life
+            as if the years in between were only a pause.
           </p>
         </div>
+      </article>
 
-        <div class="memory-card">
-          <img src="assets/memory-4.jpg" alt="Memory 4" />
+      <article class="slide">
+        <div class="card">
+          <h2>Timeline of Reconnection</h2>
+
+          <div class="mini-block">
+            <span>2015</span>
+            <h3>Different schools. Different lives.</h3>
+            <p>Life moved forward, schools changed, and childhood slowly became memories.</p>
+          </div>
+
+          <div class="mini-block">
+            <span>2024</span>
+            <h3>Life connected us again</h3>
+            <p>After years, one random conversation somehow made everything feel familiar again.</p>
+          </div>
+
+          <div class="mini-block">
+            <span>11 August 2024</span>
+            <h3>The first call after 9 years</h3>
+            <p>Some moments quietly become important forever. That call was one of them.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card">
+          <h2>Something I Want To Say Properly</h2>
+
           <p>
-            Different years. Different classrooms.
-            Same connection somehow surviving time.
+            You are one of the very few people with whom I can share anything
+            without thinking twice.
+          </p>
+
+          <p>
+            I know you sometimes say not to put effort into things for you,
+            but from my point of view, people who genuinely stay, care, and support
+            deserve to be appreciated.
+          </p>
+
+          <p class="highlight">
+            You deserve effort. You deserve appreciation.
+          </p>
+
+          <p>
+            And honestly, making this was not a burden at all.
+            I am from an IT background, so building this was actually fun for me —
+            a little practice, a little creativity, and a lot of meaning.
           </p>
         </div>
+      </article>
 
-        <div class="memory-card">
-          <img src="assets/memory-5.jpg" alt="Memory 5" />
-          <p>Maybe some memories never really leave us.</p>
+      <article class="slide">
+        <div class="card">
+          <h2>Little Things That Feel Very “Mansi” 🤍</h2>
+
+          <div class="fact">If there is dessert nearby, there is a 99% chance you already noticed it 🍰</div>
+          <div class="fact">Mysore masala dosa is basically instant happiness 😌</div>
+          <div class="fact">Travelling, little memories, and beautiful places are very “you” ✈️</div>
+          <div class="fact">Dog and cat made sense as favourite animals 🐶🐱</div>
+          <div class="fact">And then came peacock… followed by “peacock is not an animal btw” 🤣🦚</div>
         </div>
-      </div>
+      </article>
+
+      <article class="slide">
+        <div class="card">
+          <h2>Pieces of Childhood 🤍</h2>
+          <p>
+            Before life became busy, complicated, and fast…
+            there was just school, small memories, and simpler days.
+          </p>
+
+          <img class="main-img" src="assets/memory-1.jpg" alt="Memory 1" loading="lazy" />
+          <p class="caption">Somewhere in these classrooms, our story quietly existed.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card">
+          <h2>Another Small Memory</h2>
+
+          <img class="main-img" src="assets/memory-2.jpg" alt="Memory 2" loading="lazy" />
+          <p class="caption">
+            Funny how we never realise at that age which people will remain important years later.
+          </p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card">
+          <h2>School Days</h2>
+
+          <img class="main-img" src="assets/memory-3.jpg" alt="Memory 3" loading="lazy" />
+          <p class="caption">
+            Back when life was homework, lunch breaks, and waiting for the final bell.
+          </p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card">
+          <h2>Some Memories Stay</h2>
+
+          <img class="main-img" src="assets/memory-4.jpg" alt="Memory 4" loading="lazy" />
+          <p class="caption">
+            Different years. Different classrooms. Same connection somehow surviving time.
+          </p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card">
+          <h2>Maybe Some Things Never Leave</h2>
+
+          <img class="main-img" src="assets/memory-5.jpg" alt="Memory 5" loading="lazy" />
+          <p class="caption">
+            Maybe some memories never really leave us.
+          </p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card letter-card">
+          <h2>A Bestie Letter 💌</h2>
+          <p>One last message is inside.</p>
+
+          <button id="letterBtn">Open Letter 💌</button>
+
+          <div id="letter" class="hidden letter">
+            <p>Dear Mansi,</p>
+
+            <p>
+              When I started making this website, I thought it would be a simple birthday wish.
+            </p>
+
+            <p>
+              But somewhere between searching old school photos,
+              remembering our first call after 9 years,
+              and thinking about how naturally you became important again,
+              I realised something.
+            </p>
+
+            <p>
+              This is not really just about a birthday.
+              It is about appreciating someone who became a very meaningful part of my life again
+              after being gone from it for so long.
+            </p>
+
+            <p>
+              You have been there for me in moments where I did not even know how to explain
+              what I was feeling. Sometimes life feels heavy, sometimes confusing,
+              and sometimes I just need someone I can talk to without filtering my thoughts.
+            </p>
+
+            <p>
+              You are one of those very few people.
+            </p>
+
+            <p>
+              I know you often tell me not to put too much effort into things for you.
+              But I think this is where we see things differently.
+            </p>
+
+            <p class="highlight">
+              People who genuinely care, support, and stay in your life
+              deserve to be respected and appreciated.
+            </p>
+
+            <p>
+              So please do not think of this as something excessive.
+              Think of it as a small reminder that you are valued.
+            </p>
+
+            <p>
+              And honestly, making this was fun for me.
+              I am from IT, so designing it, fixing it, adding memories,
+              making the little lock, music, effects, and everything else
+              felt like practice with emotions inside it.
+            </p>
+
+            <p>
+              My wish for you this year is simple:
+              may you always have reasons to smile,
+              may your travels take you to beautiful places,
+              may your desserts always taste amazing,
+              may your Mysore masala dosa always be perfect,
+              and may life be kind to you in all the ways you deserve.
+            </p>
+
+            <p class="secret-line">
+              Strange how one person can become unintentionally important
+              without either of you noticing when it happened.
+            </p>
+
+            <p>Happy Birthday, Mansi.</p>
+
+            <p class="sign">
+              Thank you for being one of the best parts of my second chapter.
+            </p>
+
+            <p class="final-sign">— Ayush</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="card final">
+          <p class="date">End of this little memory</p>
+
+          <h2>One last thing 🤍</h2>
+
+          <p>
+            I do not want you to see this as “too much effort.”
+          </p>
+
+          <p>
+            I want you to see it as respect, appreciation,
+            and a small thank you for being someone I can trust without doubt.
+          </p>
+
+          <p>
+            Maybe life became busy, complicated, and very different from childhood.
+            But somehow, after all those years,
+            we still found our way back into each other’s lives again.
+          </p>
+
+          <p class="ending-line">
+            Some friendships are rare.
+            Ours feels like one of them.
+          </p>
+
+          <h3>Happy Birthday, Mansi ✨</h3>
+
+          <p class="final-sign">
+            Made with appreciation, a lot of debugging, and one stubborn IT student.
+          </p>
+
+          <p class="final-sign">— Ayush</p>
+        </div>
+      </article>
+
     </section>
 
-    <section class="letter-lock">
-      <h2>Hidden Letter</h2>
-
-      <p>One last message is locked inside.</p>
-
-      <button id="letterBtn">
-        Open Letter 💌
-      </button>
-
-      <div id="letter" class="hidden letter">
-        <p>Dear Mansi,</p>
-
-        <p>
-          Last year, I wished you with memories from our childhood.
-          This year feels different.
-        </p>
-
-        <p>
-          Because now, you are not just someone from my past.
-          You have slowly become someone who brings calmness into my present.
-        </p>
-
-        <p>
-          I still find it beautiful that after so many years,
-          life somehow brought us back into each other’s world.
-        </p>
-
-        <p>
-          But what matters more is what happened after that —
-          the conversations, the comfort, the random laughs,
-          and the way you became important without even trying.
-        </p>
-
-        <p>
-          I don’t want this birthday wish to feel like a copy of last year.
-          I just want it to feel honest:
-          I am genuinely grateful that you are in my life today.
-        </p>
-
-        <p>
-          May this year give you peace in your heart,
-          confidence in yourself, success in your dreams,
-          good health, and many reasons to smile without overthinking.
-        </p>
-
-        <p>
-          Happy Birthday, Mansi.
-          You matter more than you probably realise.
-        </p>
-
-        <p class="secret-line">
-          Strange how one person can become unintentionally important
-          without either of you noticing when it happened.
-        </p>
-
-        <p class="sign">— Ayush</p>
-      </div>
-    </section>
-
-    <section class="final">
-      <p class="date">Birthday Memory Complete</p>
-
-      <h2>Happy Birthday, Mansi 🤍</h2>
-
-      <p>
-        Last year was about remembering where we came from.
-      </p>
-
-      <p>
-        This year is about appreciating what you have become in my life now.
-      </p>
-
-      <p>
-        Not just a childhood friend. Not just someone I reconnected with.
-        But someone whose presence genuinely makes my days lighter.
-      </p>
-
-      <p>
-        I am really grateful life brought you back again.
-      </p>
-
-      <h3>— Ayush</h3>
-    </section>
+    <div class="slide-controls">
+      <button id="prevBtn">← Back</button>
+      <div id="slideCounter">1 / 12</div>
+      <button id="nextBtn">Next →</button>
+    </div>
 
   </main>
 

@@ -3,7 +3,6 @@ const startBtn = document.getElementById("startBtn");
 const start = document.getElementById("start");
 const boot = document.getElementById("boot");
 const bootText = document.getElementById("bootText");
-
 const content = document.getElementById("content");
 
 const letterBtn = document.getElementById("letterBtn");
@@ -20,8 +19,14 @@ const keys = document.querySelectorAll(".key");
 const clearBtn = document.getElementById("clearBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const slideCounter = document.getElementById("slideCounter");
+
 let enteredPin = "";
 const correctPin = "110824";
+let currentSlide = 0;
 
 music.volume = 0.12;
 
@@ -31,9 +36,10 @@ Finding one old connection...
 Loading childhood memories...
 Loading the call after 9 years...
 Adding birthday wishes...
-Adding desserts...
-Adding Mysore masala dosa...
-Adding travel dreams...
+Loading dogs...
+Loading cats...
+Loading peacock...
+Correction received: peacock is not an animal btw 🤣
 Adding something beautiful...
 Final message ready ✨
 `;
@@ -58,17 +64,30 @@ function typeBoot() {
       boot.classList.remove("active");
       content.classList.remove("hidden");
       window.scrollTo(0, 0);
+      showSlide(0);
     }, 900);
   }
+}
+
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+
+  currentSlide = Math.max(0, Math.min(index, slides.length - 1));
+  slides[currentSlide].classList.add("active");
+
+  slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+
+  prevBtn.disabled = currentSlide === 0;
+  nextBtn.textContent = currentSlide === slides.length - 1 ? "Finish ✨" : "Next →";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 keys.forEach((key) => {
   key.addEventListener("click", () => {
     const value = key.textContent.trim();
 
-    if (value === "Clear" || value === "⌫") {
-      return;
-    }
+    if (value === "Clear" || value === "⌫") return;
 
     if (enteredPin.length < 6) {
       enteredPin += value;
@@ -123,14 +142,24 @@ letterBtn.addEventListener("click", () => {
     : "Close Letter 🤍";
 });
 
+prevBtn.addEventListener("click", () => {
+  showSlide(currentSlide - 1);
+});
+
+nextBtn.addEventListener("click", () => {
+  if (currentSlide < slides.length - 1) {
+    showSlide(currentSlide + 1);
+  }
+});
+
 function createHeart() {
   const heart = document.createElement("div");
 
   heart.className = "heart";
-  heart.textContent = "♡";
+  heart.textContent = Math.random() > 0.75 ? "🦚" : "♡";
 
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 18 + 14 + "px";
+  heart.style.fontSize = Math.random() * 14 + 14 + "px";
   heart.style.animationDuration = Math.random() * 4 + 5 + "s";
 
   hearts.appendChild(heart);
@@ -140,7 +169,7 @@ function createHeart() {
   }, 9000);
 }
 
-setInterval(createHeart, 700);
+setInterval(createHeart, 1100);
 
 document.addEventListener("click", (event) => {
   const effect = document.createElement("div");
