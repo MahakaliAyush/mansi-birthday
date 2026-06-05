@@ -127,10 +127,18 @@ startBtn.addEventListener("click", () => {
 musicBtn.addEventListener("click", async () => {
   try {
     music.load();
+    music.loop = true;
+    music.volume = 0.25;
+
     await music.play();
-    musicBtn.textContent = "Atmosphere enabled ✨";
+
+    musicBtn.textContent =
+      "Atmosphere enabled ✨ increase volume a little 🤍";
+
+    musicBtn.classList.add("music-playing");
   } catch {
-    musicBtn.textContent = "Tap again ✨";
+    musicBtn.textContent =
+      "Tap again ✨ music is waiting";
   }
 });
 

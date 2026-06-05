@@ -429,3 +429,20 @@ main {
     min-height: calc(100vh - 150px);
   }
 }
+
+.music-playing {
+  background: linear-gradient(135deg, #14b8a6, #f472b6, #8b5cf6) !important;
+  animation: softPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 14px 30px rgba(20, 184, 166, 0.22);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 18px 42px rgba(244, 114, 182, 0.28);
+  }
+}
