@@ -547,3 +547,37 @@ main {
 .minimal-countdown .countdown-timer {
   margin-top: 20px;
 }
+
+.minimal-countdown {
+  text-align: center;
+  background: rgba(255,255,255,0.78);
+}
+
+.launch-date {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #442848;
+  margin-bottom: 30px;
+}
+
+.minimal-countdown .countdown-icon {
+  font-size: 90px;
+  margin-bottom: 25px;
+  animation: peacockFloat 4s ease-in-out infinite;
+}
+
+@keyframes peacockFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.minimal-countdown .countdown-timer {
+  margin-top: 20px;
+}
