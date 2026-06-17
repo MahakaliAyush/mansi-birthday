@@ -1,3 +1,50 @@
+const launchDate = new Date("2026-06-24T00:00:00+05:30");
+const devMode = new URLSearchParams(window.location.search).get("dev") === "1";
+
+const countdownGate = document.getElementById("countdownGate");
+
+function runCountdownGate() {
+  if (!countdownGate) return;
+
+  const now = new Date();
+
+  if (devMode || now >= launchDate) {
+    countdownGate.classList.add("hidden");
+    return;
+  }
+
+  countdownGate.classList.remove("hidden");
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  function updateCountdown() {
+    const diff = launchDate - new Date();
+
+    if (diff <= 0) {
+      location.reload();
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = String(days).padStart(2, "0");
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
+runCountdownGate();
+
 const startBtn = document.getElementById("startBtn");
 
 const start = document.getElementById("start");
