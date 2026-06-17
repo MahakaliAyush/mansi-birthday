@@ -509,3 +509,7 @@ main {
   color: #b84d83;
   font-weight: 800;
 }
+
+.countdown-gate:not(.hidden) {
+  display: flex !important;
+}

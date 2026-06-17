@@ -45,6 +45,8 @@ function runCountdownGate() {
 
 runCountdownGate();
 
+console.log("Countdown gate:", countdownGate, "Dev mode:", devMode, "Launch:", launchDate);
+
 const startBtn = document.getElementById("startBtn");
 
 const start = document.getElementById("start");
