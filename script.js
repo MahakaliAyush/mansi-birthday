@@ -45,8 +45,6 @@ function runCountdownGate() {
 
 runCountdownGate();
 
-console.log("Countdown gate:", countdownGate, "Dev mode:", devMode, "Launch:", launchDate);
-
 const startBtn = document.getElementById("startBtn");
 
 const start = document.getElementById("start");
@@ -237,3 +235,59 @@ document.addEventListener("click", (event) => {
     effect.remove();
   }, 700);
 });
+
+const agreeBtn = document.getElementById("agreeBtn");
+const disagreeBtn = document.getElementById("disagreeBtn");
+const agreementResult = document.getElementById("agreementResult");
+
+let escapeCount = 0;
+
+function moveDisagreeButton() {
+  if (!disagreeBtn || !agreementResult) return;
+
+  escapeCount++;
+
+  const x = Math.random() * 240 - 120;
+  const y = Math.random() * 90 - 45;
+
+  disagreeBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+  const messages = [
+    "Nice try 🙂",
+    "Almost 🤣",
+    "You're very determined 😭",
+    "Still not happening 😌",
+    "Mansi, give up 😂",
+    "Challenge accepted huh? 🤨",
+    "Okay now you're just proving my point 🤣",
+    "Friendship agreement cannot be rejected 😌"
+  ];
+
+  agreementResult.textContent =
+    messages[Math.min(escapeCount - 1, messages.length - 1)];
+}
+
+if (disagreeBtn) {
+  disagreeBtn.addEventListener("mouseenter", moveDisagreeButton);
+
+  disagreeBtn.addEventListener("touchstart", (event) => {
+    event.preventDefault();
+    moveDisagreeButton();
+  });
+}
+
+if (agreeBtn) {
+  agreeBtn.addEventListener("click", () => {
+    agreementResult.innerHTML = `
+      Agreement Accepted 🤝<br><br>
+      Congratulations.<br>
+      You are officially stuck with Ayush.<br><br>
+      Effective Date:<br>
+      11 August 2024<br><br>
+      Expiry Date:<br>
+      Not Found 🙂
+    `;
+
+    agreeBtn.textContent = "Accepted 🤍";
+  });
+}

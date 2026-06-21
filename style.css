@@ -591,3 +591,111 @@ main {
 .music-section #musicBtn {
   width: min(420px, 90%);
 }
+
+.agreement-line {
+  margin: 35px 0;
+  opacity: 0.15;
+}
+
+.agreement-box {
+  margin-top: 20px;
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 22px;
+}
+
+.agreement-small {
+  margin-top: 20px;
+  font-style: italic;
+  color: #ffb8e8;
+}
+
+.agreement-buttons {
+  position: relative;
+  min-height: 120px;
+  margin-top: 25px;
+}
+
+#agreeBtn,
+#disagreeBtn {
+  width: 220px;
+  max-width: 80%;
+}
+
+#agreeBtn {
+  margin: 0 auto;
+}
+
+#disagreeBtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#agreementResult {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffb8e8;
+  font-weight: 700;
+}
+
+.agreement-challenge {
+  margin-top: 22px;
+  color: #0f766e;
+  font-weight: 900;
+  text-align: center;
+}
+
+.agreement-line {
+  margin: 35px 0;
+  opacity: 0.18;
+}
+
+.agreement-box {
+  margin-top: 20px;
+  text-align: left;
+  background: rgba(255,255,255,0.65);
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(20,184,166,0.12);
+}
+
+.agreement-small {
+  margin-top: 20px;
+  font-style: italic;
+  color: #b84d83;
+  font-weight: 800;
+}
+
+.agreement-buttons {
+  position: relative;
+  min-height: 135px;
+  margin-top: 25px;
+}
+
+#agreeBtn,
+#disagreeBtn {
+  width: 220px;
+  max-width: 80%;
+}
+
+#agreeBtn {
+  margin: 0 auto;
+}
+
+#disagreeBtn {
+  position: absolute;
+  left: 50%;
+  top: 75px;
+  transform: translateX(-50%);
+  transition: 0.18s ease;
+}
+
+#agreementResult {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #b84d83;
+  font-weight: 900;
+  text-align: center;
+}
