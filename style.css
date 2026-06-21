@@ -583,13 +583,20 @@ main {
 }
 
 .music-section {
-  display: flex;
-  justify-content: center;
-  margin: 35px auto 20px;
+  position: fixed;
+  left: 50%;
+  bottom: 82px;
+  transform: translateX(-50%);
+  width: min(92vw, 680px);
+  z-index: 25;
 }
 
 .music-section #musicBtn {
-  width: min(420px, 90%);
+  margin: 0;
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 14px;
+  border-radius: 999px;
 }
 
 .agreement-line {
