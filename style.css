@@ -710,3 +710,33 @@ main {
   font-weight: 900;
   text-align: center;
 }
+
+.music-section {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 92px !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  width: min(86vw, 420px) !important;
+  margin: 0 !important;
+}
+
+.music-section #musicBtn {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 11px 16px !important;
+  font-size: 13px !important;
+  border-radius: 999px !important;
+}
+
+.slide-controls {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+  z-index: 9998 !important;
+}
+
+main {
+  padding-bottom: 160px !important;
+}
