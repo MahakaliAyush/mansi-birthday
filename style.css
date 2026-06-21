@@ -581,3 +581,13 @@ main {
 .minimal-countdown .countdown-timer {
   margin-top: 20px;
 }
+
+.music-section {
+  display: flex;
+  justify-content: center;
+  margin: 35px auto 20px;
+}
+
+.music-section #musicBtn {
+  width: min(420px, 90%);
+}
